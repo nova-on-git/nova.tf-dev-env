@@ -18,21 +18,19 @@ ENV NODE_ENV=development
 # Clone veloris-dashboard
 RUN git clone https://codywakeford:${GITHUB_TOKEN}@github.com/Veloris-Designs/veloris-dashboard.git ./veloris-dashboard
 
-# Clone veloris-site-template
+# Clone veloris-site
 RUN git clone https://codywakeford:${GITHUB_TOKEN}@github.com/Veloris-Designs/velorisdesigns.com.git ./veloris-site
 
-# Clone nova
-RUN git clone https://codywakeford:${GITHUB_TOKEN}@github.com/Veloris-Designs/nova.git ./nova
+# # Clone nova
+# RUN git clone https://codywakeford:${GITHUB_TOKEN}@github.com/Veloris-Designs/nova.git ./nova
 
 WORKDIR /app/veloris-dashboard
 RUN git pull
 RUN pnpm install
 
-
 WORKDIR /app/veloris-site
 RUN git pull
 RUN pnpm install
-
 
 COPY startup.sh /usr/local/bin/startup.sh
 RUN chmod +x /usr/local/bin/startup.sh
