@@ -3,6 +3,12 @@
 echo ""
 echo -e "\e[32m[Veloris] Installing dependencies and spinning up a dev server... \e[0m"
 
+# screen -S mysession -d -m bash  # Start screen session
+# screen -S mysession -X split     # Split the terminal
+# screen -S mysession -X screen bash  # Start bash in the new split
+# screen -S mysession -X focus     # Focus on the first split
+# screen -r mysession              
+
 cd /app/veloris-dashboard
 
 echo ""
