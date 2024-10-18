@@ -1,6 +1,7 @@
 FROM node:18
 
 WORKDIR /app
+USER root
 
 RUN apt-get update && apt-get install -y screen
 
@@ -23,5 +24,4 @@ RUN git clone https://codywakeford:${GITHUB_TOKEN}@github.com/Veloris-Designs/ve
 COPY ./startup.sh /usr/local/bin/startup.sh
 RUN chmod +x /usr/local/bin/startup.sh
 
-USER root
 EXPOSE 3000
